@@ -32,6 +32,9 @@ for (let i = 0; i < 4; i++) {
 startBtn.addEventListener("click", startQuiz);
 submitBtn.addEventListener("click", saveScore);
 
+var highScores = [];
+//localStorage.setItem("highScores", JSON.stringify(highScores));
+
 function startQuiz() {
     // Hides the content of start screen
     startScreen.setAttribute("class", "hide");
@@ -90,7 +93,6 @@ function showNextQuestion() {
     for (let i = 0; i < 4; i++) {
         choicesBtn[i].textContent = questions[questionNumber][i + 1];
     }
-
 }
 
 function endQuiz() {
@@ -102,7 +104,25 @@ function endQuiz() {
 
 function saveScore() {
     var initials = document.querySelector("#initials").value;
-    var oldScore = localStorage.getItem(initials);
-    if (secondsLeft > oldScore)
-        localStorage.setItem(initials, secondsLeft);
+    if (initials != "") {
+       var oldScores = JSON.parse(localStorage.getItem("highScores"));
+        if (oldScores != null) {
+            var indexOfInitials = oldScores.findIndex(element => element[0] === initials);
+            if (indexOfInitials > -1) {
+                if (oldScores[indexOfInitials][1] < secondsLeft) {
+                    oldScores[indexOfInitials][1] = secondsLeft;
+                }
+            } else {
+                oldScores[oldScores.length] = [initials, secondsLeft];
+            }
+
+        } else {
+            oldScores = [[initials, secondsLeft]];
+        }
+
+        localStorage.setItem("highScores", JSON.stringify(oldScores));
+
+    } else {
+        console.alert("Initials cannot be null.");
+    }
 }
