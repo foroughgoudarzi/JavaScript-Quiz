@@ -87,7 +87,11 @@ function setTimer() {
         // Stops the timer after last question or when timer is zero and shows the end screen
         if (secondsLeft === 0 || questionNumber > 4) {
             clearInterval(timerInterval);
-            endQuiz();
+
+            // Adds 1.5 sec delay before displaying end screen
+            setTimeout(() => {
+                endQuiz();
+            }, 1500);
         }
     }, 1000);
 
