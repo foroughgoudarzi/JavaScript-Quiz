@@ -10,7 +10,7 @@ Furthermore, the system retains and displays the highest score achieved by each 
 
 The following animation demonstrates how the application works.
 
-![Animation of code quiz.](./assets/animation/08-web-apis-challenge-demo.gif)
+![Animation of code quiz.](./assets/animation/coding-quiz.gif)
 
 ## Installation
 
