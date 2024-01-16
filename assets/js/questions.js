@@ -1,3 +1,6 @@
+// Questions for the quiz. The questions and answers are stored in a 5*6 array (array of arrays). 
+// The last element of each internal array is a number, indicating which answer is correct.
+
 var questions = [
    ["Which function is used to convert a string to an integer?", "parseInt()", "toInt()", "convertInt()", "stringToInteger()", 1],
    ["What is the output of console.log(2+'2')?", "4", "2+'2", "22", "none", 3],
