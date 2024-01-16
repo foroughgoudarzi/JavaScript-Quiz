@@ -8,7 +8,7 @@ Upon initiation, users can begin the quiz by clicking the start button. A timer 
 
 Furthermore, the system retains and displays the highest score achieved by each individual in a designated highest scores list.
 
-The following animation demonstrates how the application works.
+The following animation demonstrates how the [JavaScript-Quiz](https://foroughgoudarzi.github.io/JavaScript-Quiz/) application works.
 
 ![Animation of code quiz.](./assets/animation/coding-quiz.gif)
 
